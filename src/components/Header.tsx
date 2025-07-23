@@ -13,9 +13,8 @@ const Header = () => {
             className="flex items-center space-x-3 cursor-pointer group"
             onClick={() => navigate('/')}
           >
-            <div className="relative p-3 bg-gradient-primary rounded-xl shadow-glow-primary group-hover:shadow-glow-neon transition-all duration-300 animate-float">
+            <div className="relative p-3 bg-gradient-primary rounded-xl shadow-glow-primary group-hover:shadow-glow-neon transition-all duration-300">
               <Bot className="w-7 h-7 text-primary-foreground" />
-              <div className="absolute -top-1 -right-1 w-3 h-3 bg-accent rounded-full animate-glow-pulse"></div>
             </div>
             <div>
               <h1 className="text-2xl font-bold text-neon font-inter tracking-tight">

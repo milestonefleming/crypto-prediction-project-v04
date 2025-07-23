@@ -84,44 +84,25 @@ const Dashboard = () => {
 
         {/* Stats Cards */}
         <section className="mb-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Card className="interactive-card animate-scale-in">
               <CardContent className="p-6 text-center">
                 <div className="p-3 bg-gradient-primary rounded-xl w-fit mx-auto mb-4 shadow-glow-primary">
                   <Sparkles className="w-8 h-8 text-primary-foreground" />
                 </div>
-                <p className="text-3xl font-bold text-neon mb-2">87%</p>
+                <p className="text-3xl font-bold text-neon mb-2">96%</p>
                 <p className="text-sm text-muted-foreground font-medium">Accuracy Rate</p>
               </CardContent>
             </Card>
             
-            <Card className="interactive-card animate-scale-in" style={{ animationDelay: '0.1s' }}>
-              <CardContent className="p-6 text-center">
-                <div className="p-3 bg-gradient-secondary rounded-xl w-fit mx-auto mb-4 shadow-glow-secondary">
-                  <BarChart3 className="w-8 h-8 text-secondary-foreground" />
-                </div>
-                <p className="text-3xl font-bold text-neon mb-2">12.5K</p>
-                <p className="text-sm text-muted-foreground font-medium">Predictions Made</p>
-              </CardContent>
-            </Card>
             
-            <Card className="interactive-card animate-scale-in" style={{ animationDelay: '0.2s' }}>
+            <Card className="interactive-card animate-scale-in" style={{ animationDelay: '0.1s' }}>
               <CardContent className="p-6 text-center">
                 <div className="p-3 bg-gradient-primary rounded-xl w-fit mx-auto mb-4 shadow-glow-accent">
                   <Users className="w-8 h-8 text-primary-foreground" />
                 </div>
-                <p className="text-3xl font-bold text-neon mb-2">3.2K</p>
+                <p className="text-3xl font-bold text-neon mb-2">1</p>
                 <p className="text-sm text-muted-foreground font-medium">Active Users</p>
-              </CardContent>
-            </Card>
-            
-            <Card className="interactive-card animate-scale-in" style={{ animationDelay: '0.3s' }}>
-              <CardContent className="p-6 text-center">
-                <div className="p-3 bg-gradient-secondary rounded-xl w-fit mx-auto mb-4 shadow-glow-accent">
-                  <MessageCircle className="w-8 h-8 text-secondary-foreground" />
-                </div>
-                <p className="text-3xl font-bold text-neon mb-2">AI-Powered</p>
-                <p className="text-sm text-muted-foreground font-medium">Sentiment Analysis</p>
               </CardContent>
             </Card>
           </div>

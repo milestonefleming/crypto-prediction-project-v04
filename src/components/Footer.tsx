@@ -78,11 +78,6 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-white/10 mt-8 pt-8 text-center">
-          <p className="text-sm text-muted-foreground">
-            © 2024 CryptoPredictAI. Built with advanced machine learning for smarter trading decisions.
-          </p>
-        </div>
       </div>
     </footer>
   );
