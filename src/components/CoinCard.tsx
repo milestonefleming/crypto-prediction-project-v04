@@ -3,7 +3,6 @@ import { Badge } from "@/components/ui/badge";
 import { TrendingUp, TrendingDown, Sparkles } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import SentimentIndicator from "./SentimentIndicator";
-import PriceChart from "./PriceChart";
 import { type CoinSentiment } from "@/services/sentimentAnalysis";
 
 interface CoinCardProps {
@@ -126,14 +125,6 @@ const CoinCard = ({ symbol, name, price, change24h, icon, sentiment }: CoinCardP
           )}
         </div>
 
-        <div className="mt-6">
-          <PriceChart 
-            symbol={symbol} 
-            name={name} 
-            color={getCoinChartColor(symbol)}
-            compact={true}
-          />
-        </div>
 
         <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <Sparkles className="w-5 h-5 text-accent animate-glow-pulse" />

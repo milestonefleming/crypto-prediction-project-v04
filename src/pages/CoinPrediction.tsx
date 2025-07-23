@@ -10,6 +10,7 @@ import { fetchSingleCoinData, type CoinData } from "@/services/coinGeckoApi";
 import { fetchPredictionData, type PredictionAPIResponse } from "@/services/rapidApiService";
 import { useSingleCoinSentiment } from "@/hooks/useSentimentData";
 import SentimentIndicator from "@/components/SentimentIndicator";
+import PriceChart from "@/components/PriceChart";
 
 interface PredictionData {
   period: string;
@@ -277,6 +278,19 @@ const CoinPrediction = () => {
                     <Zap className="w-4 h-4 text-primary" />
                     <span>Technical Indicators</span>
                   </h4>
+                  
+                  <div className="mb-6">
+                    <PriceChart 
+                      symbol={coin.symbol} 
+                      name={coin.name} 
+                      color={coin.symbol === 'BTC' ? 'hsl(var(--crypto-bitcoin))' : 
+                             coin.symbol === 'ETH' ? 'hsl(var(--crypto-ethereum))' : 
+                             coin.symbol === 'DOGE' ? 'hsl(var(--crypto-dogecoin))' : 
+                             'hsl(var(--primary))'}
+                      compact={true}
+                    />
+                  </div>
+                  
                   <div className="space-y-3">
                     <div className="flex justify-between">
                       <span className="text-sm text-muted-foreground">RSI</span>
