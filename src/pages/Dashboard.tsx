@@ -180,39 +180,6 @@ const Dashboard = () => {
           </div>
         </section>
 
-        {/* Price History Graphs Section */}
-        <section className="mb-20">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-neon mb-4">Price History Charts</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Interactive price charts with real-time data and advanced technical analysis
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-1 gap-8">
-            <div className="animate-slide-up">
-              <PriceChart 
-                symbol="BTC" 
-                name="Bitcoin" 
-                color="hsl(var(--crypto-bitcoin))"
-              />
-            </div>
-            <div className="animate-slide-up" style={{ animationDelay: '0.2s' }}>
-              <PriceChart 
-                symbol="ETH" 
-                name="Ethereum" 
-                color="hsl(var(--crypto-ethereum))"
-              />
-            </div>
-            <div className="animate-slide-up" style={{ animationDelay: '0.4s' }}>
-              <PriceChart 
-                symbol="DOGE" 
-                name="Dogecoin" 
-                color="hsl(var(--crypto-dogecoin))"
-              />
-            </div>
-          </div>
-        </section>
 
         {/* How Our AI Works */}
         <section className="mb-20">

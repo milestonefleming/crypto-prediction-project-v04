@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { TrendingUp, TrendingDown, Sparkles } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import SentimentIndicator from "./SentimentIndicator";
+import PriceChart from "./PriceChart";
 import { type CoinSentiment } from "@/services/sentimentAnalysis";
 
 interface CoinCardProps {
@@ -61,6 +62,15 @@ const getCoinGradient = (symbol: string) => {
   }
 };
 
+const getCoinChartColor = (symbol: string) => {
+  switch (symbol.toLowerCase()) {
+    case 'btc': return 'hsl(var(--crypto-bitcoin))';
+    case 'eth': return 'hsl(var(--crypto-ethereum))';
+    case 'doge': return 'hsl(var(--crypto-dogecoin))';
+    default: return 'hsl(var(--primary))';
+  }
+};
+
 const CoinCard = ({ symbol, name, price, change24h, icon, sentiment }: CoinCardProps) => {
   const navigate = useNavigate();
   const isPositive = change24h >= 0;
@@ -116,9 +126,13 @@ const CoinCard = ({ symbol, name, price, change24h, icon, sentiment }: CoinCardP
           )}
         </div>
 
-        <div className="relative">
-          <div className="h-1 bg-gradient-to-r from-transparent via-primary to-transparent rounded-full opacity-30"></div>
-          <div className="absolute inset-0 h-1 bg-gradient-primary rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+        <div className="mt-6">
+          <PriceChart 
+            symbol={symbol} 
+            name={name} 
+            color={getCoinChartColor(symbol)}
+            compact={true}
+          />
         </div>
 
         <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
