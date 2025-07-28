@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Futuristic Crypto AI Dashboard Design System */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Deep navy futuristic background */
+    --background: 237 39% 8%;
+    --foreground: 220 40% 98%;
+
+    /* Glassmorphism cards */
+    --card: 237 39% 10%;
+    --card-foreground: 220 40% 98%;
+    --card-glass: 237 39% 12%;
+
+    --popover: 237 39% 10%;
+    --popover-foreground: 220 40% 98%;
+
+    /* Neon purple primary */
+    --primary: 269 91% 67%;
+    --primary-foreground: 237 39% 8%;
+    --primary-glow: 269 91% 77%;
+
+    /* Electric blue secondary */
+    --secondary: 208 100% 50%;
+    --secondary-foreground: 237 39% 8%;
+    --secondary-glow: 208 100% 60%;
+
+    --muted: 237 25% 15%;
+    --muted-foreground: 220 20% 65%;
+
+    /* Neon accent colors */
+    --accent: 173 100% 50%;
+    --accent-foreground: 237 39% 8%;
+    --accent-glow: 173 100% 60%;
+
+    --destructive: 0 91% 71%;
+    --destructive-foreground: 220 40% 98%;
+
+    --border: 237 25% 18%;
+    --input: 237 25% 15%;
+    --ring: 269 91% 67%;
+
+    /* Crypto-specific neon colors */
+    --crypto-green: 142 84% 47%;
+    --crypto-red: 0 91% 71%;
+    --crypto-orange: 35 100% 50%;
+    --crypto-bitcoin: 35 100% 50%;
+    --crypto-ethereum: 225 100% 67%;
+    --crypto-dogecoin: 45 100% 51%;
+    
+    /* Futuristic gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(269 91% 67%), hsl(208 100% 50%));
+    --gradient-secondary: linear-gradient(135deg, hsl(208 100% 50%), hsl(173 100% 50%));
+    --gradient-hero: linear-gradient(180deg, hsl(237 39% 8%) 0%, hsl(237 39% 12%) 50%, hsl(237 39% 8%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(237 39% 10% / 0.8), hsl(237 39% 12% / 0.9));
+    --gradient-glass: linear-gradient(145deg, hsl(237 39% 12% / 0.3), hsl(237 39% 15% / 0.4));
+    --gradient-neon: linear-gradient(90deg, hsl(269 91% 67%), hsl(208 100% 50%), hsl(173 100% 50%));
+    
+    /* Neon glows and shadows */
+    --shadow-card: 0 8px 32px hsl(237 39% 4% / 0.6);
+    --shadow-glass: 0 8px 32px hsl(237 39% 4% / 0.3);
+    --glow-primary: 0 0 40px hsl(269 91% 67% / 0.4);
+    --glow-secondary: 0 0 30px hsl(208 100% 50% / 0.3);
+    --glow-accent: 0 0 25px hsl(173 100% 50% / 0.3);
+    --glow-neon: 0 0 60px hsl(269 91% 67% / 0.2), 0 0 100px hsl(208 100% 50% / 0.1);
+    --border-glow: 0 0 20px hsl(269 91% 67% / 0.5);
+    
+    /* Animation variables */
+    --transition-smooth: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  /* Glassmorphism utilities */
+  .glass-card {
+    @apply bg-gradient-glass backdrop-blur-lg border border-white/10 shadow-glass;
+  }
+  
+  .glass-nav {
+    @apply bg-background/80 backdrop-blur-xl border-b border-white/10;
+  }
+
+  /* Neon glow effects */
+  .neon-glow {
+    box-shadow: var(--glow-neon);
+  }
+  
+  .neon-border {
+    border: 1px solid hsl(var(--primary));
+    box-shadow: var(--border-glow);
+  }
+  
+  .hover-glow {
+    transition: var(--transition-smooth);
+  }
+  
+  .hover-glow:hover {
+    box-shadow: var(--glow-primary);
+    transform: translateY(-2px);
+  }
+
+  /* Animated backgrounds */
+  .animated-gradient {
+    background: var(--gradient-neon);
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+  
+  @keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Text effects */
+  .text-neon {
+    background: var(--gradient-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+  }
+
+  /* Interactive elements */
+  .interactive-card {
+    @apply glass-card hover-glow cursor-pointer;
+    transition: var(--transition-smooth);
+  }
+  
+  .interactive-card:hover {
+    @apply neon-border;
+    transform: translateY(-4px) scale(1.02);
+  }
+
+  /* Underline animation for nav links */
+  .nav-link {
+    @apply relative;
+  }
+  
+  .nav-link::after {
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-300;
+    content: '';
+  }
+  
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  /* Sparkline container */
+  .sparkline {
+    @apply h-8 w-16 opacity-70;
+  }
+}
